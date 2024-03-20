@@ -4,3 +4,4 @@
 <h2>Second commit using aakash's devops account</h2>
 <h1>Test CI CD</h1>
 <h1> Test automatic release </h1>
+<h1>Test CI CD with mason</h1>
