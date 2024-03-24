@@ -5,3 +5,4 @@
 <h1>Test CI CD</h1>
 <h1> Test automatic release </h1>
 <h1>Test CI CD with mason</h1>
+<h1>Test CI CD with automation test cases</h1>
