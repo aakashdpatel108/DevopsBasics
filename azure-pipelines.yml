@@ -21,7 +21,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package' 
 
-- task: SonarCloudPrepare@1
+#- task: SonarCloudPrepare@1
   inputs:
         SonarCloud: 'sonarconnect'
         organization: 'aakashdpatel1108'
@@ -33,11 +33,11 @@ steps:
           sonar.projectKey=Aakashdpatel1108_AzureDemoProject
           sonar.projectName=AzureDemoProject
 
-- task: SonarCloudAnalyze@1
+#- task: SonarCloudAnalyze@1
   inputs:
         jdkversion: 'JAVA_HOME_17_X64'
 
-- task: SonarCloudPublish@1
+#- task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
 - task: CopyFiles@2
