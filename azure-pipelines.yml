@@ -35,8 +35,8 @@ steps:
   #      jdkversion: 'JAVA_HOME_17_X64'
 
 #- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
+ # inputs:
+  #  pollingTimeoutSec: '300'
 #- task: CopyFiles@2
  # inputs:
   #  Contents: '**/*.war'
