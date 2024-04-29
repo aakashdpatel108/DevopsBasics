@@ -10,6 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonarconnect'
+    organization: 'aakashdpatel1108'
+    scannerMode: 'MSBuild'
+    projectKey: '933dbe110ab15ef0f9c841732e9368847ad1b3e3'
+    projectName: 'AzureDemoProject'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -21,26 +31,8 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package' 
 
-#- task: SonarCloudPrepare@1
-  #inputs:
-   #     SonarCloud: 'sonarconnect'
-    #    organization: 'aakashdpatel1108'
-          # Put one key=value per line, example:
-          # sonar.exclusions=**/*.bin
-#          sonar.projectKey=Aakashdpatel1108_AzureDemoProject
- #         sonar.projectName=AzureDemoProject
-
-#- task: SonarCloudAnalyze@1
- # inputs:
-  #      jdkversion: 'JAVA_HOME_17_X64'
-
-#- task: SonarCloudPublish@1
- # inputs:
-  #  pollingTimeoutSec: '300'
-#- task: CopyFiles@2
- # inputs:
-  #  Contents: '**/*.war'
-   # TargetFolder: '$(build.artifactstagingdirectory)'
+- task: SonarCloudAnalyze@1
+  
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
